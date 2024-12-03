@@ -20,9 +20,9 @@ pipeline {
                                                       usernameVariable: 'USER',
                                                       passwordVariable: 'PASS')]) {
                         sh '''
-                       docker build -t kelzceana/my-webapp:latest .
+                       docker build -t kelzceana/react-app:latest .
                        echo $PASS | docker login -u $USER --password-stdin
-                       docker push kelzceana/my-webapp:latest
+                       docker push kelzceana/react-app:latest
                     '''
                                                       }
                 }
