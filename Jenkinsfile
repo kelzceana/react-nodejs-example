@@ -25,5 +25,15 @@ pipeline {
                 }
             }
         }
+        stage ('deploy to EC2') {
+            steps {
+                script {
+                    def dockerCmd = 'docker run -d -p 3000:3080 kelzceana/react-app:latest'
+                    sshagent(['ec2-server-key']) {
+                        sh "ssh -o StrictHostKeyChecking=no ec2-user@54.221.164.84 ${dockerCmd}"
+                    }
+                }
+            }
+        }
     }
 }
