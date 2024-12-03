@@ -1,9 +1,7 @@
 pipeline {
     agent {
-        docker {
-            image 'node:18-alpine'
-            reuseNode true
-        }
+    tools {
+        nodejs 'node'
     }
     stages {
         stage('Init') {
