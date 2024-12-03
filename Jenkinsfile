@@ -9,7 +9,7 @@ pipeline {
         stage('Init') {
             steps {
                 script {
-                    buildimage = load 'scripts/buildimage.groovy'
+                    buildimage = load 'script/buildimage.groovy'
                 }
             }
         }
