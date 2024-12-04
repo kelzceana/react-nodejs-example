@@ -6,7 +6,7 @@ def execute() {
         sh '''
                 docker build --platform linux/amd64 -t kelzceana/react-app_amd:1.1 .
                 echo $PASS | docker login -u $USER --password-stdin
-                docker push kelzceana/react-app:latest
+                docker push kelzceana/react-app_amd:1.1
                 '''
                                                   }
 }
